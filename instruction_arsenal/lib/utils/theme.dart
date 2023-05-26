@@ -6,16 +6,16 @@
  */
 
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+//import 'package:google_fonts/google_fonts.dart';
 
 
 class CustomTheme {
-  static TextStyle get title1 => GoogleFonts.getFont(
-    'Poppins',
-    color: const Color(0xFF303030),
-    fontWeight: FontWeight.w600,
-    fontSize: 24,
-  );
+  // static TextStyle get title1 => GoogleFonts.getFont(
+  //   'Poppins',
+  //   color: const Color(0xFF303030),
+  //   fontWeight: FontWeight.w600,
+  //   fontSize: 24,
+  // );
   static ThemeData get lightTheme {
     return ThemeData( //2
       brightness: Brightness.light,
@@ -23,7 +23,7 @@ class CustomTheme {
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Montserrat', //3
       appBarTheme: AppBarTheme(
-          backgroundColor: Colors.grey.shade100,
+          backgroundColor: Colors.blue,
           titleTextStyle: const TextStyle(color: Colors.black, fontSize: 12),
           centerTitle: false),
 

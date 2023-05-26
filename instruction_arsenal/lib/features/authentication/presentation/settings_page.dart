@@ -3,7 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../utils/theme_provider.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends ConsumerWidget {
   const SettingsPage({Key? key}) : super(key: key);
 
   @override
@@ -28,6 +28,6 @@ class SettingsPage extends StatelessWidget {
           ),
         ],
       ),
-    )
+    );
   }
 }

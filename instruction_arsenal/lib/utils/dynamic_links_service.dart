@@ -9,9 +9,10 @@ import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
-import 'package:instruction_arsenal/homepage/community_made_instructions/community_made_instructions_info_page.dart';
+//import 'package:instruction_arsenal/homepage/community_made_instructions/community_made_instructions_info_page.dart';
 
-import '../backend/models/community_made_instructions.dart';
+//import '../backend/models/community_made_instructions.dart';
+import 'models/community_made_instructions.dart';
 
 
 class DynamicLinkService {
@@ -38,11 +39,14 @@ class DynamicLinkService {
     if (deepLink != null) {
       print(deepLink);
       final postId = deepLink.queryParameters['postId'];
-      _callAPI(postId).then((post) {
-        navigatorKey.currentState?.push(
-            MaterialPageRoute(
-                builder: (context) => CommunityMadeInstructionsInfoPage(communityMadeInstructions: post, isMyPost: false,)));
-      });
+      // _callAPI(postId).then((post) {
+      //   navigatorKey.currentState?.push(
+      //       MaterialPageRoute(
+      //           builder: (context) => CommunityMadeInstructionsInfoPage(communityMadeInstructions: post, isMyPost: false,)));
+      // }
+      //);
+      //TODO implement this
+
     //   var idToken = await FirebaseAuth.instance.currentUser!.getIdToken();
     //   var dio = Dio();
     //     var response = await dio.get('http://10.0.2.2:8080/api/v1/instructions/communitymadeinstructions/$postId',

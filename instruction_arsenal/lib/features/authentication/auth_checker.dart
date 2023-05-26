@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:instruction_arsenal/features/authentication/presentation/login_page.dart';
+import 'package:instruction_arsenal/features/authentication/presentation/settings_page.dart';
 import '../../error_screen.dart';
 import 'data/auth_provider.dart';
 
@@ -22,7 +23,8 @@ class AuthChecker extends ConsumerWidget {
     final authState = ref.watch(authStateProvider);
     return authState.when(
         data: (data) {
-          if (data != null) return const HomePage();
+          // if (data != null) return const HomePage();
+          if (data != null) return const SettingsPage();
           return const LoginPageWidget();
         },
         loading: () => const CircularProgressIndicator(),

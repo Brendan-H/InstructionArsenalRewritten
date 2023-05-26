@@ -4,7 +4,7 @@ import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:google_mobile_ads/google_mobile_ads.dart';
+//import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:instruction_arsenal/features/authentication/data/firebase_auth_repository.dart';
 import 'package:instruction_arsenal/utils/dynamic_links_service.dart';
 import 'package:instruction_arsenal/utils/theme.dart';
@@ -25,7 +25,7 @@ import 'generated/l10n.dart';
 Future<void> main() async {
   setPathUrlStrategy();
   WidgetsFlutterBinding.ensureInitialized();
-  MobileAds.instance.initialize();
+ // MobileAds.instance.initialize();
   await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform
   );
@@ -38,11 +38,11 @@ Future<void> main() async {
     FirebaseCrashlytics.instance.recordError(error, stack, fatal: true);
     return true;
   };
-  MobileAds.instance.updateRequestConfiguration(
-    RequestConfiguration(
-      testDeviceIds: ['E9F63D566FDEF50BFB41E18F94E93C59'],
-    ),
-  );
+  // MobileAds.instance.updateRequestConfiguration(
+  //   RequestConfiguration(
+  //     testDeviceIds: ['E9F63D566FDEF50BFB41E18F94E93C59'],
+  //   ),
+  // );
   runApp( ProviderScope(child: MyApp(initialLink)));
 }
 

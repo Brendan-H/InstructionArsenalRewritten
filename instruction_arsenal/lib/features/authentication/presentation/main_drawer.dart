@@ -8,8 +8,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:instruction_arsenal/features/authentication/presentation/settings_page.dart';
-import 'package:instruction_arsenal/profile/bookmarked_community_made_instructions_page.dart';
-import 'package:instruction_arsenal/profile/profile_page.dart';
+//import 'package:instruction_arsenal/profile/bookmarked_community_made_instructions_page.dart';
+//import 'package:instruction_arsenal/profile/profile_page.dart';
 
 import '../../../generated/l10n.dart';
 import 'login_page.dart';
@@ -62,25 +62,29 @@ class _MainDrawerState extends State<MainDrawer> {
           //  title: const Text('Your Instructions'),
             title: Text(S.of(context).yourInstructions),
             onTap: () async{
-              await Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const ProfilePage(),
-                ),
-                    (r) => false,
-              );},
+              // await Navigator.pushAndRemoveUntil(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const ProfilePage(),
+              //   ),
+              //       (r) => false,
+              // );
+              //TODO Implement this
+              },
           ),
           ListTile(
             leading: const Icon(Icons.bookmark),
             title: Text(S.of(context).bookmarkedInstructions),
             onTap: () async{
-              await Navigator.pushAndRemoveUntil(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const BookmarkedCommunityMadeInstructionsPage(),
-                ),
-                    (r) => false,
-              );},
+              // await Navigator.pushAndRemoveUntil(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) => const BookmarkedCommunityMadeInstructionsPage(),
+              //   ),
+              //       (r) => false,
+              // );
+              //TODO IMPLEMENT THIS
+              },
           ),
            ListTile(
             leading: Icon(Icons.settings),

@@ -9,14 +9,12 @@ import 'dart:convert';
 import 'package:dio/dio.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:instruction_arsenal/homepage/homepage.dart';
-
-//import '../auth/auth_util.dart';
-//import '../forgot_password/forgot_password_widget.dart';
+import 'package:instruction_arsenal/features/authentication/data/auth_provider.dart';
+//import 'package:instruction_arsenal/homepage/homepage.dart';
 import '../../../generated/l10n.dart';
 import '../../../utils/widgets.dart';
 import 'package:flutter/material.dart';
-
+import 'complete_profile_widget.dart';
 import 'forgot_password_page.dart';
 
 class LoginPageWidget extends StatefulWidget {
@@ -86,6 +84,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
       key: scaffoldKey,
       backgroundColor: Colors.white60,
       body: Consumer(builder: (context, ref, child) {
+        final auth = ref.watch(fireBaseAuthProvider);
         return Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -348,19 +347,26 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                         final user = await FirebaseAuth.instance.signInWithEmailAndPassword(
                                           email: loginEmailAddressController.text,
                                           password: loginPasswordController.text,
-                                        );
+                                        ).whenComplete(() => auth.authStateChanges().listen((event) async {
+                                          if (event == null) {
+                                            return;
+                                          }
+                                        }));
+
+                                        
                                         var idtoken = await FirebaseAuth.instance.currentUser?.getIdToken();
                                         print(idtoken);
                                         if (user == null) {
                                           return;
                                         }
-                                        await Navigator.pushAndRemoveUntil(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) => const Homepage(),
-                                          ),
-                                              (r) => false,
-                                        );
+                                        // await Navigator.pushAndRemoveUntil(
+                                        //   context,
+                                        //   MaterialPageRoute(
+                                        //     builder: (context) => const Homepage(),
+                                        //   ),
+                                        //       (r) => false,
+                                        // );
+                                        //TODO implement homepage
                                       } catch (e) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -728,7 +734,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                       await FirebaseAuth.instance.createUserWithEmailAndPassword(
 
                                           email: createEmailController!.text,
-                                          password: createPasswordController!.text);
+                                          password: createPasswordController!.text)
+                                          .whenComplete(() => auth.authStateChanges().listen((event) async {
+                                        if (event == null) {
+                                          const AsyncValue.loading();
+                                          return;
+                                        }
+                                      }));
                                       await FirebaseAuth.instance.currentUser?.sendEmailVerification();
 
 
