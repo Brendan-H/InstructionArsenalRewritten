@@ -10,6 +10,7 @@ class FirebaseAuthRepository {
 
   User? get currentUser => _auth.currentUser;
 
+
   Future<void> signInWithEmailAndPassword(String email, String password,
       BuildContext context) async {
     try {
@@ -19,7 +20,7 @@ class FirebaseAuthRepository {
         context: context,
         builder: (ctx) =>
             AlertDialog(
-              title: Text('An Error Occured'),
+              title: const Text('An Error Occured'),
               content: Text(e.toString()),
               actions: [
                 TextButton(
@@ -45,14 +46,14 @@ class FirebaseAuthRepository {
           context: context,
           builder: (ctx) =>
               AlertDialog(
-                  title: Text('Error Occured'),
+                  title: const Text('Error Occured'),
                   content: Text(e.toString()),
                   actions: [
                     TextButton(
                         onPressed: () {
                           Navigator.of(ctx).pop();
                         },
-                        child: Text("OK"))
+                        child: const Text("OK"))
                   ]));
     } catch (e) {
       if (e == 'email-already-in-use') {

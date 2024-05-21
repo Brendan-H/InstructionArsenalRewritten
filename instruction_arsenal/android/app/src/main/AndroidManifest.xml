@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.brendanharan.instruction_arsenal">
    <application
-        android:label="instruction_arsenal"
+        android:label="InstructionArsenal"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

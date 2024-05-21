@@ -7,12 +7,12 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:instruction_arsenal/features/authentication/presentation/settings_page.dart';
+import 'package:instruction_arsenal/features/settings/presentation/settings_page.dart';
 //import 'package:instruction_arsenal/profile/bookmarked_community_made_instructions_page.dart';
 //import 'package:instruction_arsenal/profile/profile_page.dart';
 
-import '../../../generated/l10n.dart';
-import 'login_page.dart';
+import '../../generated/l10n.dart';
+import '../authentication/presentation/login_page.dart';
 
 class MainDrawer extends StatefulWidget {
   const MainDrawer({Key? key}) : super(key: key);
@@ -87,8 +87,8 @@ class _MainDrawerState extends State<MainDrawer> {
               },
           ),
            ListTile(
-            leading: Icon(Icons.settings),
-            title: Text('Settings'),
+            leading: const Icon(Icons.settings),
+            title: const Text('Settings'),
             onTap: () async {
               await Navigator.pushAndRemoveUntil(
                 context,

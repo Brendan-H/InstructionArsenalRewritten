@@ -22,9 +22,9 @@ class CustomTheme {
         primaryColor: Colors.blue,
         scaffoldBackgroundColor: Colors.white,
         fontFamily: 'Montserrat', //3
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
           backgroundColor: Colors.blue,
-          titleTextStyle: const TextStyle(color: Colors.black, fontSize: 12),
+          titleTextStyle: TextStyle(color: Colors.black, fontSize: 12),
           centerTitle: false),
 
         buttonTheme: ButtonThemeData( // 4

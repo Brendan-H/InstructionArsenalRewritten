@@ -5,20 +5,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 //import 'package:google_mobile_ads/google_mobile_ads.dart';
-import 'package:instruction_arsenal/features/authentication/data/firebase_auth_repository.dart';
 import 'package:instruction_arsenal/utils/dynamic_links_service.dart';
 import 'package:instruction_arsenal/utils/theme.dart';
 import 'package:instruction_arsenal/utils/theme_provider.dart';
-import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:url_strategy/url_strategy.dart';
 import 'package:flutter/foundation.dart';
 import 'error_screen.dart';
 import 'features/authentication/auth_checker.dart';
 import 'firebase_options.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'package:url_strategy/url_strategy.dart';
 
-import 'utils/models/community_made_instructions.dart';
 
 import 'generated/l10n.dart';
 

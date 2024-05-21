@@ -14,6 +14,7 @@ import 'package:instruction_arsenal/features/authentication/data/auth_provider.d
 import '../../../generated/l10n.dart';
 import '../../../utils/widgets.dart';
 import 'package:flutter/material.dart';
+import '../../homepage/homepage.dart';
 import 'complete_profile_widget.dart';
 import 'forgot_password_page.dart';
 
@@ -38,6 +39,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
   TextEditingController? lastNameController;
   late bool loginPasswordVisibility;
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
 
 
   Future<dynamic> sendTokenForValidation(var idtoken) async {
@@ -89,7 +91,7 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
         mainAxisSize: MainAxisSize.max,
         children: [
            Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(16, 52, 16, 4),
+            padding: const EdgeInsetsDirectional.fromSTEB(16, 52, 16, 4),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -359,14 +361,13 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                         if (user == null) {
                                           return;
                                         }
-                                        // await Navigator.pushAndRemoveUntil(
-                                        //   context,
-                                        //   MaterialPageRoute(
-                                        //     builder: (context) => const Homepage(),
-                                        //   ),
-                                        //       (r) => false,
-                                        // );
-                                        //TODO implement homepage
+                                        await Navigator.pushAndRemoveUntil(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Homepage(),
+                                          ),
+                                              (r) => false,
+                                        );
                                       } catch (e) {
                                         ScaffoldMessenger.of(context)
                                             .showSnackBar(
@@ -377,9 +378,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                           ),
                                         );
                                       }
-
-
-
                                     },
                                     text: 'Login',
                                     options: const BrendanButtonOptions(
@@ -732,7 +730,6 @@ class _LoginPageWidgetState extends State<LoginPageWidget>
                                       }
 
                                       await FirebaseAuth.instance.createUserWithEmailAndPassword(
-
                                           email: createEmailController!.text,
                                           password: createPasswordController!.text)
                                           .whenComplete(() => auth.authStateChanges().listen((event) async {
