@@ -251,7 +251,7 @@ class _CommunityMadeInstructionsTabState extends State<CommunityMadeInstructions
         backgroundColor: Colors.black,
         onPressed: () {  },
         child: PopupMenuButton<int>(
-          icon: const Icon(Icons.add),
+          icon: const Icon(Icons.add, color: Colors.white,),
           onSelected: (widget) async {
             await Navigator.pushAndRemoveUntil(
               context,

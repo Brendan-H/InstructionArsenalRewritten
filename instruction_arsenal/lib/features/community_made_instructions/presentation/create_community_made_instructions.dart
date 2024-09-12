@@ -175,7 +175,7 @@ class _CreateCommunityMadeInstructionsPageState extends State<CreateCommunityMad
                   selectedValue: categoryChoice,
                   choiceItems: categoryChoiceOptions,
                   onChange: (state) => setState(() {
-                    categoryChoice = state.value;
+                    categoryChoice = state.value ?? "Technology";
                   }),
                 ),
               ),

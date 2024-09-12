@@ -130,7 +130,7 @@ class _OfficialInstructionsTabState extends State<OfficialInstructionsTab> {
         backgroundColor: Colors.black,
         onPressed: () {  },
         child: PopupMenuButton<int>(
-          icon: const Icon(Icons.add),
+          icon: const Icon(Icons.add, color: Colors.white,),
           onSelected: (widget) async {
             await Navigator.pushAndRemoveUntil(
               context,
@@ -151,7 +151,7 @@ class _OfficialInstructionsTabState extends State<OfficialInstructionsTab> {
                     // sized box with width 10
                     width: 10,
                   ),
-                  Text("Add Official Instructions")
+                  Text("Add Official Instructions", style: TextStyle(color: Colors.black),),
                 ],
               ),
             ),
@@ -234,7 +234,7 @@ class _OfficialInstructionsTabState extends State<OfficialInstructionsTab> {
                         width: MediaQuery.of(context).size.width * 0.65,
                         child: ElevatedButton(
                           style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+                            backgroundColor: WidgetStateProperty.all<Color>(Colors.black),
                           ),
                           onPressed: () async {
                             var firebaseid = await FirebaseAuth.instance.currentUser?.getIdToken();
@@ -270,7 +270,8 @@ class _OfficialInstructionsTabState extends State<OfficialInstructionsTab> {
                             print(firebaseid);
                           },
                           child: const Text(
-                          "Search"
+                          "Search",
+                            style: TextStyle(color: Colors.white),
                         ),
                         ),
                       ),

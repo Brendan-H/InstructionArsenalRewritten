@@ -7,6 +7,7 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:instruction_arsenal/features/homepage/homepage.dart';
 import 'package:instruction_arsenal/features/settings/presentation/settings_page.dart';
 //import 'package:instruction_arsenal/profile/bookmarked_community_made_instructions_page.dart';
 //import 'package:instruction_arsenal/profile/profile_page.dart';
@@ -93,7 +94,8 @@ class _MainDrawerState extends State<MainDrawer> {
               await Navigator.pushAndRemoveUntil(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => const SettingsPage(),
+                  builder: (context) => const Homepage(),
+                  // builder: (context) => const SettingsPage(),
                 ),
                     (r) => false,
               );

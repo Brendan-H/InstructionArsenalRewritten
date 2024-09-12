@@ -101,7 +101,7 @@ class _CommunityMadeInstructionsCategorySliverState
           _categoryChangeStreamController.add;
         }),
         onChange: (state) => setState(() {
-          categoryChoice = state.value;
+          categoryChoice = state.value ?? "Technology";
           _categoryChangeStreamController.add;
         }),
       ),
