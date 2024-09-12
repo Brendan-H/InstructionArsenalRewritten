@@ -20,7 +20,7 @@ class FirebaseAuthRepository {
         context: context,
         builder: (ctx) =>
             AlertDialog(
-              title: const Text('An Error Occured'),
+              title: const Text('An Error Occurred'),
               content: Text(e.toString()),
               actions: [
                 TextButton(
